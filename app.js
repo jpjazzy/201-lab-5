@@ -125,10 +125,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var arrProduct = 1;
+  var arrList = '';
+  for (var i = 0; i < testArray.length; i++) {
+    arrProduct = multiply(arrProduct, testArray[i])[0]; //arrSum + testArray[i];
+    if (arrList) {
+      arrList = arrList + ',' + testArray[i];
+    } else if (!arrList) {
+      arrList = testArray[i];
+    }
+  }
+  arrList = 'The numbers ' + arrList + ' have a product of ' + arrProduct + '.';
 
+  console.log('arrSum:', arrProduct);
+  console.log('arrList:', arrList);
+
+  return [arrProduct, arrList];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
