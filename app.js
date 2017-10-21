@@ -14,6 +14,10 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 function sum(a,b){ //eslint-disable-line
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
+
+  //Push info to html document elements
+  document.getElementById('sum-head').innerHTML = 'sum(' + a + ', ' + b + ')';
+  document.getElementById('sum').innerHTML = message;
   return [theSum, message];
 }
 
@@ -36,6 +40,10 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a,b){ //eslint-disable-line
   var theProduct = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
+
+  //Push info to html document elements
+  document.getElementById('mult-head').innerHTML = 'multiply(' + a + ', ' + b + ')';
+  document.getElementById('mult').innerHTML = message;
   return [theProduct, message];
 }
 
@@ -64,10 +72,16 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.';
   var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.';
 
+  //console logs for troubleshooting
   console.log('sum:', theSum);
   console.log('product:', theProduct);
   console.log('sumMessage:', sumMessage);
   console.log('productMessage:', productMessage);
+
+  //push information to html
+  document.getElementById('sam-head').innerHTML = 'sumAndMultiply(' + a + ', ' + b + ', ' + c + ')';
+  document.getElementById('sam-sum-msg').innerHTML = sumMessage;
+  document.getElementById('sam-mult-msg').innerHTML = productMessage;
   return [theSum, theProduct, sumMessage, productMessage];
 }
 
@@ -102,9 +116,13 @@ function sumArray(testArray){ //eslint-disable-line
   }
   arrList = arrList + ' was passed in as an array of numbers, and ' + arrSum + ' is their sum.';
 
+  //console logs for troubleshooting
   console.log('arrSum:', arrSum);
   console.log('arrList:', arrList);
 
+  //push info to html
+  document.getElementById('sum-arr-head').innerHTML = 'sumArray([' + testArray + '])';
+  document.getElementById('sum-arr-msg').innerHTML = arrList;
   return [arrSum, arrList];
 }
 
@@ -137,9 +155,13 @@ function multiplyArray(testArray){ //eslint-disable-line
   }
   arrList = 'The numbers ' + arrList + ' have a product of ' + arrProduct + '.';
 
+  //console logs for troubleshooting
   console.log('arrSum:', arrProduct);
   console.log('arrList:', arrList);
 
+  //push info to html
+  document.getElementById('mult-arr-head').innerHTML = 'multiplyArray([' + testArray + '])';
+  document.getElementById('mult-arr-msg').innerHTML = arrList;
   return [arrProduct, arrList];
 }
 
